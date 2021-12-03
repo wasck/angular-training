@@ -1,1 +1,23 @@
-<app-chuck-norris-jokes></app-chuck-norris-jokes>
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="toggleSidenav()">
+   <mat-icon>menu</mat-icon>
+ </button>
+ <span>My App</span>
+</mat-toolbar>
+
+<mat-drawer-container>
+  <mat-drawer
+    mode="side" 
+    [opened]="isSidenavOpen$ | async">
+    <h3>APIs</h3>
+    <mat-list role="list" *ngIf="navItems">
+      <mat-list-item role="listitem" *ngFor="let navItem of navItems">
+        <a [routerLink]="navItem.path">{{navItem.label}}</a>
+      </mat-list-item>
+    </mat-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
+

@@ -1,0 +1,12 @@
+mat-drawer-container {
+  height: 100%;
+
+  & mat-drawer {
+    min-width: 230px;
+  }
+
+  & mat-list-item:hover {
+    background-color: lightgray;
+    cursor: pointer;
+  }
+}
