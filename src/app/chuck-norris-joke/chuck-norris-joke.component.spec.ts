@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChuckNorrisJokesComponent } from './chuck-norris-jokes.component';
+import { ChuckNorrisJokeComponent } from './chuck-norris-joke.component';
 
 describe('ChuckNorrisJokesComponent', () => {
-  let component: ChuckNorrisJokesComponent;
-  let fixture: ComponentFixture<ChuckNorrisJokesComponent>;
+  let component: ChuckNorrisJokeComponent;
+  let fixture: ComponentFixture<ChuckNorrisJokeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChuckNorrisJokesComponent ]
+      declarations: [ ChuckNorrisJokeComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChuckNorrisJokesComponent);
+    fixture = TestBed.createComponent(ChuckNorrisJokeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

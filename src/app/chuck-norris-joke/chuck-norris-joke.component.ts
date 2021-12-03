@@ -4,10 +4,10 @@ import { ChuckNorrisService } from './chuck-norris.service';
 
 @Component({
   selector: 'app-chuck-norris-jokes',
-  templateUrl: './chuck-norris-jokes.component.html',
-  styleUrls: ['./chuck-norris-jokes.component.scss']
+  templateUrl: './chuck-norris-joke.component.html',
+  styleUrls: ['./chuck-norris-joke.component.scss']
 })
-export class ChuckNorrisJokesComponent implements OnInit, OnDestroy {
+export class ChuckNorrisJokeComponent implements OnInit, OnDestroy {
   private readonly componentDestroy$ = new Subject<void>();
 
   public readonly title = 'Chuck Norris random Jokes';

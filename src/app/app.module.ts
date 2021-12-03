@@ -6,13 +6,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import {HttpClientModule} from '@angular/common/http';
-import { ChuckNorrisJokesComponent } from './chuck-norris-joke/chuck-norris-jokes.component';
+import { ChuckNorrisJokeComponent } from './chuck-norris-joke/chuck-norris-joke.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChuckNorrisJokesComponent
+    ChuckNorrisJokeComponent
   ],
   imports: [
     BrowserModule,
