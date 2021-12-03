@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, combineLatest, map, Observable, Subject, switchMap, tap } from 'rxjs';
@@ -17,7 +18,7 @@ interface ChuckNorrisRandomJoke {
 })
 export class ChuckNorrisService {
 
-  private readonly chuckNorrisRandomJokeURL = 'https://api.chucknorris.io/jokes/random';
+  private readonly chuckNorrisRandomJokeURL = `${environment.apis.chuckNorris}jokes/random`;
   private readonly joke$: Subject<string>;
   private readonly load$: Subject<void>;
 
@@ -25,7 +26,7 @@ export class ChuckNorrisService {
     this.joke$ = new Subject<string>();
     this.load$ = new Subject<void>();
 
-    this.initJoke();
+    this.initJokeSubscription();
   }
 
   public get randomJoke(): Observable<string> {
@@ -40,7 +41,7 @@ export class ChuckNorrisService {
     return this.httpClient.get<ChuckNorrisRandomJoke>(this.chuckNorrisRandomJokeURL);
   }
 
-  private initJoke(): void {
+  private initJokeSubscription(): void {
     const result$ = this.load$.pipe(
       switchMap(() => this.getJoke()),
       map((result) => result.value),
